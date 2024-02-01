@@ -1,0 +1,11 @@
+<!-- File: soundsbalance/src/contents/resources.qrc
+     Based on helloworld example from KDE documentation
+     https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/
+     Accessed on 01 Feb 2024
+     By Amir R Khan, started 01 Feb 2024  -->
+
+<RCC>
+    <qresource prefix="/">
+        <file alias="main.qml">contents/ui/main.qml</file>
+    </qresource>
+</RCC>
