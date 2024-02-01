@@ -37,3 +37,5 @@ Executed all of the above from ~/Documents/Coding/kde5/kirigami/soundsbalance
 
 Next will edit .gitignore to exclude build directories
 
+Next will run the built executable to check it behaves as expected. It does.
+
