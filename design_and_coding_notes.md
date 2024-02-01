@@ -47,4 +47,6 @@ https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/
 
 Idea to try: what if just add a Controls.Button entry to the app? Will try next.
 
+The button appears in the top corner. Plan had been to add a text field. May need a label and text field. Will try next.
+
 

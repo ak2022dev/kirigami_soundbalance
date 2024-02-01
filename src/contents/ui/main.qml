@@ -28,5 +28,8 @@ Kirigami.ApplicationWindow {
             anchors.centerIn: parent
             text: i18n("Sounds Balance!")
         }
+        Controls.Button {
+            text: i18n("Balance")
+        }
     }
 }
