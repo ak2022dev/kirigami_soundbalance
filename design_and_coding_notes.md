@@ -17,4 +17,7 @@ Next I will enter the main.qml file as-per the example.
 
 Having entered and adapted main.qml, next I will do similarly for main.cpp.
 
+Having entered and adapted main.cpp, next I will do similarly for resources.qrc.
+
+
 
