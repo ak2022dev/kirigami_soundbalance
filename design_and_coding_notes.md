@@ -7,3 +7,9 @@ tutorial for inspiration.
 
 In helloworld, the first step was to create the directory structure manually. I will do similar for this app.
 
+I am using the page below for guidance:
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/>
+
+
+
