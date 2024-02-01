@@ -33,4 +33,7 @@ cmake -B build/ -DCMAKE_INSTALL_PREFIX="~/Documents/Coding/kde5/kirigami"
 cmake --build build/
 cmake --install build/
 
+Executed all of the above from ~/Documents/Coding/kde5/kirigami/soundsbalance
+
+Next will edit .gitignore to exclude build directories
 
