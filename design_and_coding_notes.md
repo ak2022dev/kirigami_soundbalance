@@ -23,4 +23,7 @@ Having entered resources.qrc, next I will do similarly for the top level CMakeLi
 
 Having entered top level CMakeLists.txt, will do the same next for the one in soundsbalance/src.
 
+soundsbalance/src/CMakeLists.txt needs to be amended from version for helloworld. Will do that next.
+
+
 
