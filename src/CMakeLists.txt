@@ -1,11 +1,11 @@
-add_executable(helloworld)
+add_executable(soundsbalance)
 
-target_sources(helloworld PRIVATE
+target_sources(soundsbalance PRIVATE
     main.cpp
     resources.qrc
 )
 
-target_link_libraries(helloworld
+target_link_libraries(soundsbalance
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Gui
@@ -14,4 +14,4 @@ target_link_libraries(helloworld
     KF$${QT_MAJOR_VERSION}::I18n
 )
 
-install(TARGETS helloworld ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS soundsbalance ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
