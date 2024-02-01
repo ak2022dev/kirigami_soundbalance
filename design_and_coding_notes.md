@@ -19,5 +19,7 @@ Having entered and adapted main.qml, next I will do similarly for main.cpp.
 
 Having entered and adapted main.cpp, next I will do similarly for resources.qrc.
 
+Having entered resources.qrc, next I will do similarly for the top level CMakeLists.txt.
+
 
 
