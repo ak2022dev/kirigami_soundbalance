@@ -25,5 +25,12 @@ Having entered top level CMakeLists.txt, will do the same next for the one in so
 
 soundsbalance/src/CMakeLists.txt needs to be amended from version for helloworld. Will do that next.
 
+Having done all of the above, next step is to attempt to build soundsbalance. Will do that next.
+
+As-per the helloworld tutorial, the build commands, according to my current folder structure, should be:
+
+cmake -B build/ -DCMAKE_INSTALL_PREFIX="~/Documents/Coding/kde5/kirigami"
+cmake --build build/
+cmake --install build/
 
 
