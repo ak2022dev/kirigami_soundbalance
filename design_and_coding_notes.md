@@ -15,5 +15,6 @@ I have setup the directory structure and empty files as-per the example.
 
 Next I will enter the main.qml file as-per the example.
 
+Having entered and adapted main.qml, next I will do similarly for main.cpp.
 
 
