@@ -39,3 +39,12 @@ Next will edit .gitignore to exclude build directories
 
 Next will run the built executable to check it behaves as expected. It does.
 
+Next will add a text field to input the sound value to balance files to.
+
+To find out about adding a suitable text field, will consult KDE Kirigami tutorials, e.g.
+
+https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/
+
+Idea to try: what if just add a Controls.Button entry to the app? Will try next.
+
+
