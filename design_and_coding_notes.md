@@ -21,5 +21,6 @@ Having entered and adapted main.cpp, next I will do similarly for resources.qrc.
 
 Having entered resources.qrc, next I will do similarly for the top level CMakeLists.txt.
 
+Having entered top level CMakeLists.txt, will do the same next for the one in soundsbalance/src.
 
 
