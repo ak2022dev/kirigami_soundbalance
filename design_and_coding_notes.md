@@ -5,3 +5,5 @@ As this is my first kirigami app, I plan to code in an exploratory fashion.
 First, I am to get an application window visible, using the kirigami helloworld
 tutorial for inspiration.
 
+In helloworld, the first step was to create the directory structure manually. I will do similar for this app.
+
