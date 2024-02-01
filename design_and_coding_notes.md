@@ -49,4 +49,25 @@ Idea to try: what if just add a Controls.Button entry to the app? Will try next.
 
 The button appears in the top corner. Plan had been to add a text field. May need a label and text field. Will try next.
 
+Using the Qt6 QML book from
+<https://www.qt.io/hubfs/_website/QML%20Book/qt6book-with-frontpage.pdf>
 
+Experimenting with a text input component. Will try compiling.
+
+Fails with:
+MESA: error: ZINK: failed to choose pdev
+glx: failed to create drisw screen
+failed to load driver: zink
+QQmlApplicationEngine failed to load component
+qrc:/main.qml:34:9: Controls.TextInput is not a type
+
+Trying the Qt5 book from
+<https://e8johan.github.io/qmlbook/assets/qt5_cadaques.pdf>
+
+The example in the Qt5 book uses QtQuick 2.5 when using TextInput. My code uses 2.15. Is my 2.15 a typo...
+
+Wonder how to find the differences between them, or which new components were introduced when...
+
+Using this:
+<https://doc.qt.io/qt-5/qml-qtquick-controls2-textfield-members.html>
+It appears TextField inherits from TextInput. Could TextInput be abstract?

@@ -31,5 +31,12 @@ Kirigami.ApplicationWindow {
         Controls.Button {
             text: i18n("Balance")
         }
+        Controls.TextInput {
+            id: avgTargetVol
+            x: 8; y: 8
+            width: 96; height: 20
+            focus: true
+            text: "Average Target Volume"
+        }
     }
 }
