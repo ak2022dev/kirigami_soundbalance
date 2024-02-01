@@ -11,5 +11,9 @@ I am using the page below for guidance:
 
 <https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/>
 
+I have setup the directory structure and empty files as-per the example.
+
+Next I will enter the main.qml file as-per the example.
+
 
 
