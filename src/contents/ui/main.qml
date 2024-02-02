@@ -31,11 +31,21 @@ Kirigami.ApplicationWindow {
             }
             Controls.Button {
                 text: i18n("Open Files")
-                onClicked:fileDialog.open();
+                onClicked: {
+                    fileDialog.open();
+                }
             }
             FileDialog {
                 id: fileDialog
                 title: "Please choose a file"
+                onAccepted: {
+                    console.log("Files chosen: " + fileDialog.fileUrls )
+                    Qt.quit()
+                }
+                onRejected: {
+                    console.log("Cancelled")
+                    Qt.quit()
+                }
             }
             Controls.Button {
                 text: i18n("Balance Files")

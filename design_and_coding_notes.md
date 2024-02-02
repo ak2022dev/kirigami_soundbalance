@@ -182,3 +182,10 @@ git pull origin main
 git merge first_filedialog_tries
 git push origin main
 
+Next will look at getting list of selected files into my app ready for calling them using back-end later...
+
+Have added code, compiles, but doesn't output to console as expected.
+Am considering the following:
+
+<https://stackoverflow.com/questions/36338000/qml-console-log-and-console-debug-dont-write-to-console>
+
