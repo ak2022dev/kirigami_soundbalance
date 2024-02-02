@@ -193,3 +193,6 @@ In the terminal, executing using line below:
 QT_LOGGING_RULES="*.debug=true; qt.*.debug=false" ./soundsbalance
 
 Did give me the output expected, but also a lot of logging info with it. A start.
+
+Attempting to pass values from fileDialog back into the button, but maybe too simplistic and need to review how to use models before continuing. To work on next.
+

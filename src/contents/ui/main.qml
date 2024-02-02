@@ -30,16 +30,19 @@ Kirigami.ApplicationWindow {
                 text: i18n("Sounds Balance!")
             }
             Controls.Button {
+                id: openFilesButton
                 text: i18n("Open Files")
                 onClicked: {
                     fileDialog.open();
                 }
+                fileDialogResponse: ""
             }
             FileDialog {
                 id: fileDialog
                 title: "Please choose a file"
                 onAccepted: {
                     console.log("Files chosen: " + fileDialog.fileUrls )
+                    openFilesButton.fileDialogResponse = fileDialog.fileUrls
                     Qt.quit()
                 }
                 onRejected: {
