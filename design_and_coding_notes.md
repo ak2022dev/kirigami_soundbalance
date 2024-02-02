@@ -159,4 +159,6 @@ Using gitlab search for "filedialog" then searching for qmlfiledialog gave the f
 
 It appears there may be an example showing me how to call the dialog.
 
+Creating a branch for experimenting with file dialogs, called first_filedialog_tries.
+
 
