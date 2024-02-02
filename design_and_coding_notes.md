@@ -71,3 +71,24 @@ Wonder how to find the differences between them, or which new components were in
 Using this:
 <https://doc.qt.io/qt-5/qml-qtquick-controls2-textfield-members.html>
 It appears TextField inherits from TextInput. Could TextInput be abstract?
+
+Will try commenting out TextInput and then add only a little more code at a time to try to compile.
+
+Compiles when Controls.TextInput code commented out. Will reinstate with empty TextInput body and see what happens then.
+
+Hmm. Seems to have built. Will check... So it compiles but fails to execute:
+
+MESA: error: ZINK: failed to choose pdev
+glx: failed to create drisw screen
+failed to load driver: zink
+QQmlApplicationEngine failed to load component
+qrc:/main.qml:35:9: Controls.TextInput is not a type
+
+Strange. Will see if I can find online anyone with similar problem.
+
+Looking at this on Stack Overflow:
+<https://stackoverflow.com/questions/26969518/qqmlapplicationengine-failed-to-load-component-type-is-not-a-type>
+
+A number of possibilities here. Would the same happen if some other control were used? Button seemed to work okay.
+
+If I add a second button, it seems to be in the same place as the first. Maybe time to add a layout and put them in that, then come back to the issue of the TextInput. Also wondering if maybe a Kirigami component is expected rather than a QML component. Not sure. Will look at some examples of layouts first, then go from there.
