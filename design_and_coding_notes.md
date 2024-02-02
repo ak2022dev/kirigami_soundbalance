@@ -175,3 +175,10 @@ Considering this example from Stack Overflow:
 
 Used it and got the file dialog to open when button pressed, as required.
 Will merge these changes back into main next...
+
+Did this using:
+git checkout main
+git pull origin main
+git merge first_filedialog_tries
+git push origin main
+
