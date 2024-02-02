@@ -24,29 +24,18 @@ Kirigami.ApplicationWindow {
     // This can also be set to an id of a Kirigami.Page
     pageStack.initialPage: Kirigami.Page {
         ColumnLayout {
-            Controls.Button {
-                text: i18n("Balance")
-            }
-
-            Controls.Button {
-                text: i18n("Another Balance")
-            }
             Controls.Label {
-                // Centre label horizontally and vertically with parent object
-//                anchors.centerIn: parent
                 text: i18n("Sounds Balance!")
             }
+            Controls.Button {
+                text: i18n("Open Files")
+            }
+            Controls.Button {
+                text: i18n("Balance Files")
+            }
+            Controls.Button {
+                text: i18n("Cancel opened Files")
+            }
         }
-
-/*
-        Controls.TextInput {
-          id: avgTargetVol
-            x: 8; y: 8
-            width: 96; height: 20
-            focus: true
-            text: "Average Target Volume"
-
-        }
-*/
     }
 }

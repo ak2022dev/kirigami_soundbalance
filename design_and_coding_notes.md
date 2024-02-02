@@ -125,3 +125,12 @@ Trying a ColumnLayout for the buttons, directly inside the application, without 
 Looking at this on Stack Overflow:
 <https://stackoverflow.com/questions/5601931/how-do-i-safely-merge-a-git-branch-into-master>
 
+Did the merge using these commands, so now back on main:
+git checkout main
+git pull origin main
+git merge first_layout_tries
+git push origin main
+
+Re-ordered components in user-interface to reflect actual needs of app.
+Next need to lookup how to link a button to accessing the files dialog.
+
