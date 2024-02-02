@@ -114,4 +114,11 @@ It looks like ColumnLayout is worth trying. Not sure if need to change page to A
 Will try using branch structures for these experiments so can rollback changes that didn't work, but also leave the experiments in place even if not merging back into main.
 
 Working in newly created first_layout_tries branch.
+To push, had to use this:
+
+git push --set-upstream origin first_layout_tries
+
+As kindly suggested by git.
+
+Trying a ColumnLayout for the buttons, directly inside the application, without any other component to contain the layout. Will see if it compiles... Awesome. Did exactly what I expected. Now, what if I add the label into the layout too... Trying it...  No, that messed up the layout. Will try removing centralling from label...Yes, now that works. Will commit then merge into main...
 

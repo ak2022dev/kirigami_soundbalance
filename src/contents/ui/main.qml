@@ -23,17 +23,19 @@ Kirigami.ApplicationWindow {
     // Set the first page that will be loaded when the app opens
     // This can also be set to an id of a Kirigami.Page
     pageStack.initialPage: Kirigami.Page {
-        Controls.Label {
-            // Centre label horizontally and vertically with parent object
-            anchors.centerIn: parent
-            text: i18n("Sounds Balance!")
-        }
-        Controls.Button {
-            text: i18n("Balance")
-        }
+        ColumnLayout {
+            Controls.Button {
+                text: i18n("Balance")
+            }
 
-        Controls.Button {
-            text: i18n("Another Balance")
+            Controls.Button {
+                text: i18n("Another Balance")
+            }
+            Controls.Label {
+                // Centre label horizontally and vertically with parent object
+//                anchors.centerIn: parent
+                text: i18n("Sounds Balance!")
+            }
         }
 
 /*
