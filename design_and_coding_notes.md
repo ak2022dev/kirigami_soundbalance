@@ -122,3 +122,6 @@ As kindly suggested by git.
 
 Trying a ColumnLayout for the buttons, directly inside the application, without any other component to contain the layout. Will see if it compiles... Awesome. Did exactly what I expected. Now, what if I add the label into the layout too... Trying it...  No, that messed up the layout. Will try removing centralling from label...Yes, now that works. Will commit then merge into main...
 
+Looking at this on Stack Overflow:
+<https://stackoverflow.com/questions/5601931/how-do-i-safely-merge-a-git-branch-into-master>
+
