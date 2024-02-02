@@ -31,10 +31,11 @@ Kirigami.ApplicationWindow {
             }
             Controls.Button {
                 text: i18n("Open Files")
+                onClicked:fileDialog.open();
             }
             FileDialog {
+                id: fileDialog
                 title: "Please choose a file"
-                Component.onCompleted: visible = true
             }
             Controls.Button {
                 text: i18n("Balance Files")

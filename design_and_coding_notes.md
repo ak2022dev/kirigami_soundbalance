@@ -169,3 +169,8 @@ Compilation error when tried to include QtQuick.Dialogs. Qt5 demands version num
 The example above is very different from the Qt6 examle. As I'm building with Qt5, will use the Qt5 example.
 
 Seems to have built, given a version number for Dialogs. Did some more experimenting, including making the dialog visible. Compiles and opens the filedialog. Now need to see how to link it to another button. Possibly give it an id and wire to a button that way?
+
+Considering this example from Stack Overflow:
+<https://stackoverflow.com/questions/48318193/how-to-correctly-use-filedialog-in-qml-qt>
+
+Used it and got the file dialog to open when button pressed, as required.
