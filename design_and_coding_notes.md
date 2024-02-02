@@ -162,3 +162,9 @@ It appears there may be an example showing me how to call the dialog.
 Creating a branch for experimenting with file dialogs, called first_filedialog_tries.
 
 Entered first_filedialog_tries. Will commit to record.
+Compilation error when tried to include QtQuick.Dialogs. Qt5 demands version number. Looked up here:
+
+<https://doc.qt.io/qt-5/qml-qtquick-dialogs-filedialog.html>
+
+The example above is very different from the Qt6 examle. As I'm building with Qt5, will use the Qt5 example.
+
