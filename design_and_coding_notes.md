@@ -134,3 +134,29 @@ git push origin main
 Re-ordered components in user-interface to reflect actual needs of app.
 Next need to lookup how to link a button to accessing the files dialog.
 
+Looking into actions, from KDE Kirigami documentation:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-actions/>
+
+Looks even simpler than adding a button, because the action automatically creates one. It's what gets triggered when it's pressed I also need to look at. Also interesting are the icons that have existing names, that KDE will access. May return to those when needed. The example adds to the model. I need my action to open a dialog. I am sure further examples will show how...
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-separatefiles/>
+
+Going further in the basic tutorial series as above does tackle more complicated topics, such as multiple qml files and adding them to resources.qrc, but I think I'll need bigger examples to find how file opening is done.
+
+From examples they cite on
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-next_steps/>
+
+I am looking at the gitlab page for koko, which is an image viewer, hoping it calls a file-opening dialog.
+
+<https://invent.kde.org/graphics/koko>
+
+Looking at this, for the main application:
+<https://invent.kde.org/graphics/koko/-/blob/master/src/qml/Main.qml?ref_type=heads>
+
+Using gitlab search for "filedialog" then searching for qmlfiledialog gave the following very useful info:
+
+<https://doc.qt.io/qt-6/qml-qtquick-dialogs-filedialog.html>
+
+It appears there may be an example showing me how to call the dialog.
+
+
