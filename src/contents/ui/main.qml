@@ -32,6 +32,9 @@ Kirigami.ApplicationWindow {
             Controls.Button {
                 text: i18n("Open Files")
             }
+            FileDialog {
+
+            }
             Controls.Button {
                 text: i18n("Balance Files")
             }
