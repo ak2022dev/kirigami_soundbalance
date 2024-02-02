@@ -92,3 +92,25 @@ Looking at this on Stack Overflow:
 A number of possibilities here. Would the same happen if some other control were used? Button seemed to work okay.
 
 If I add a second button, it seems to be in the same place as the first. Maybe time to add a layout and put them in that, then come back to the issue of the TextInput. Also wondering if maybe a Kirigami component is expected rather than a QML component. Not sure. Will look at some examples of layouts first, then go from there.
+
+Moving forward with tutorial examples from KDE:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/>
+
+Noticed and corrected minor typo. Committed and recompiled.
+I am wondering if the resources.qrc needs declaration of any further qml files to be added. Will check in later examples.
+
+May need to pay particular attention to the any changes in build-tool configuration files in later examples, in case more libaries are included than in the helloword example.
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-pages/>
+
+Above has a note about adding any new pages to the resources.qrc file. Not adding new pages yet, but still mindful of how something similar may be relevant for multiple components.
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+Above starts documenting layouts, which I plan to try next.
+
+It looks like ColumnLayout is worth trying. Not sure if need to change page to AbstractCard first though. Will see...
+
+Will try using branch structures for these experiments so can rollback changes that didn't work, but also leave the experiments in place even if not merging back into main.
+
+
