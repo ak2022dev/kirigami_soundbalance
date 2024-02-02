@@ -174,3 +174,4 @@ Considering this example from Stack Overflow:
 <https://stackoverflow.com/questions/48318193/how-to-correctly-use-filedialog-in-qml-qt>
 
 Used it and got the file dialog to open when button pressed, as required.
+Will merge these changes back into main next...
