@@ -189,3 +189,7 @@ Am considering the following:
 
 <https://stackoverflow.com/questions/36338000/qml-console-log-and-console-debug-dont-write-to-console>
 
+In the terminal, executing using line below:
+QT_LOGGING_RULES="*.debug=true; qt.*.debug=false" ./soundsbalance
+
+Did give me the output expected, but also a lot of logging info with it. A start.
