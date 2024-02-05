@@ -196,3 +196,40 @@ Did give me the output expected, but also a lot of logging info with it. A start
 
 Attempting to pass values from fileDialog back into the button, but maybe too simplistic and need to review how to use models before continuing. To work on next.
 
+Just picking-up again after weekend. Next steps are to look at examples that use models and pass values between components. Will use:
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+which appears to have the first use of model and delegate, in the CardsListView example.
+
+There appears to be a ListModel type. It's then going into AbstractCard example, but not what's relevant right now. It's the model I'm interested in, and potential interaction with delegate.
+So, it's looking like the application for its page stack, a scrollable page, with a cards list view inside it, with a model and delegate field that provide the id value for the objects of those names that will handle the model and delegate part of the model/view/delegate pattern. Still unsure if this is same as model/view/controller. Will check...
+
+Using this:
+<https://en.wikipedia.org/wiki/Delegation_pattern>
+
+seems like delegate is a more specific term that might be more modern than controller, and also refers to use of composition rather than inheritance. Makes sense in light of code example. Tightly coupled anyway, nonetheless, it seems(?)
+
+Observing in the KDE example that the CardsListView contains a delegate which is a component in which there is an AbstractCard...
+
+So far, not seeing how data goes to and from the model. Hoping to find that later in the docs. Maybe it's convention over configuration?
+
+Well, the page on adding actions has the first example of a model being changed. It appears that the model object's id can be used, then a method called on it. Nothing has really been said about scoping rules here, so will need to look to those up at some stage, but will experiment for now.
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-actions/>
+
+It looks like the onTriggered property is a callback specifying an action. It also seems that a number of Model types may exist, which basically encapsulate a data structure plus its access methods. I am wondering about creating custom models too, but maybe that will come later.
+
+So, intro on creating a menu later on the page here too:
+https://develop.kde.org/docs/getting-started/kirigami/introduction-actions/
+
+On the next page, we have use of TextField, which I experimented with earlier, so this should be interesting:
+
+https://develop.kde.org/docs/getting-started/kirigami/introduction-overlaysheets/
+
+It's putting the controls for the overlay sheet inside a form layout.
+Just been carefully reading the code and piecing together how things fit. Also just going to check the includes, to see if anything further has been included compared to the helloworld app, because I was getting a type error when I tried to add a TextField or similar object previously.
+
+No, the app example so far does not include anything further, in fact my app includes more than it does, namely QtDialogs too.
+
+I have followed through the rest of the example. It's quite involved and needs a core careful look to see how the moving parts remain linked together. I think some of the overview chapters from the QML book might not be bad to at least cast an eye over, too, without going too deep into them, necessarily. Will do that next.
