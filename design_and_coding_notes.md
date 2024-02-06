@@ -285,4 +285,26 @@ and this link to apis by module:
 
 <https://doc.qt.io/qt-6/modules-qml.html>
 
+Scanning through some of the above, ObjectModel seems promising:
+
+<https://doc.qt.io/qt-6/qml-qtqml-models-objectmodel.html>
+
+I was expecting it to be close to a plain JS object, but it's not. It's to contain visual items to be used in a view, and if used, a delegate is not needed.
+
+Looking at below, to see how to integrate JS code into the QML interface, which may be what I need:
+<https://doc.qt.io/qt-6/qtquick-usecase-integratingjs.html>
+
+Ah yes, seems like exactly what I need. So the Item type is basically for JS type objects, and their fields can be referred to using their id value it seems. Just going to go back through the Kirigami example to see if that's used in there.
+
+It used in this example:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+Which explains that Item is like the base type for other QML types, and doesn't have an actual visual representation.
+<https://doc.qt.io/qt-6/qml-qtquick-item.html#details>
+
+It can be useful for grouping several items under a single root visual item, as exemplified above.
+Also, example above abstracting functions into a separate Logic (namespace?) seems useful.
+
+Plan: to try to use an Item to add some JS code to my app.
+
 
