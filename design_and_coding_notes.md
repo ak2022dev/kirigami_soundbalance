@@ -233,3 +233,20 @@ Just been carefully reading the code and piecing together how things fit. Also j
 No, the app example so far does not include anything further, in fact my app includes more than it does, namely QtDialogs too.
 
 I have followed through the rest of the example. It's quite involved and needs a core careful look to see how the moving parts remain linked together. I think some of the overview chapters from the QML book might not be bad to at least cast an eye over, too, without going too deep into them, necessarily. Will do that next.
+
+Have printed and annotated the example from this page:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-overlaysheets/>
+
+Have some ideas for how to proceed with my app now, which I will try piecemeal.
+
+Rebuilding and running the code as it stands, just to remind myself...
+Ah, I think I need to run some command-line parameters as well, to see console output...
+
+QT_LOGGING_RULES="*.debug=true; qt.*.debug=false" ./soundsbalance
+
+Previous git log for code records the following:
+
+WIP trying to add code to pass file names from fileDialog back into code for further use. Currently not working. To investigate models next
+
+Okay. So the last build didn't work, and will need to fix it.
+
