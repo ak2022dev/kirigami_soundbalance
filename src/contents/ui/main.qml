@@ -35,14 +35,12 @@ Kirigami.ApplicationWindow {
                 onClicked: {
                     fileDialog.open();
                 }
-                fileDialogResponse: ""
             }
             FileDialog {
                 id: fileDialog
                 title: "Please choose a file"
                 onAccepted: {
                     console.log("Files chosen: " + fileDialog.fileUrls )
-                    openFilesButton.fileDialogResponse = fileDialog.fileUrls
                     Qt.quit()
                 }
                 onRejected: {

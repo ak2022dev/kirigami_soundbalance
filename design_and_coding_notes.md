@@ -305,6 +305,8 @@ Which explains that Item is like the base type for other QML types, and doesn't 
 It can be useful for grouping several items under a single root visual item, as exemplified above.
 Also, example above abstracting functions into a separate Logic (namespace?) seems useful.
 
-Plan: to try to use an Item to add some JS code to my app.
+Plan: to try to use an Item to add some JS code to my app. First remove erroneous code to return to a working user-interface/app.
+
+
 
 
