@@ -250,3 +250,39 @@ WIP trying to add code to pass file names from fileDialog back into code for fur
 
 Okay. So the last build didn't work, and will need to fix it.
 
+On execution, the following error results:
+qrc:/main.qml:38:17: Cannot assign to non-existent property "fileDialogResponse"
+
+Experimentally, I inserted a field into the button to try to capture the result from the fileDialog, but that seems to fail due to the field not being present in the Controls.Button type, hence investigating use of model. Will lookup model types in QML/Kirigami docs to see if there might be a simple type that is appropriate to try using first...
+
+Scanning this document about QML imports, which appear to be using JS modules, probably.
+<https://doc.qt.io/qt-6/qtqml-syntax-imports.html>
+
+Scanning this document about QtQuick:
+<https://doc.qt.io/qt-6/qtquick-index.html>
+
+It mentions the QtQML module provides the QML engine and language infrastructure, on which there is more here:
+
+<https://doc.qt.io/qt-6/qtqml-index.html>
+
+including a link explaining what QML is:
+
+<https://doc.qt.io/qt-6/qmlapplications.html>
+
+Within the above, the following reference also looks useful:
+
+<https://doc.qt.io/qt-6/qmlreference.html>
+
+and these coding conventions:
+
+<https://doc.qt.io/qt-6/qml-codingconventions.html>
+
+this glossary of terms:
+
+<https://doc.qt.io/qt-6/qml-glossary.html>
+
+and this link to apis by module:
+
+<https://doc.qt.io/qt-6/modules-qml.html>
+
+
