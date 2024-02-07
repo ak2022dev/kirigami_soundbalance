@@ -307,6 +307,100 @@ Also, example above abstracting functions into a separate Logic (namespace?) see
 
 Plan: to try to use an Item to add some JS code to my app. First remove erroneous code to return to a working user-interface/app.
 
+Adding an Item, then a field of my own choosing doesn't work. Will have another look at the example of combining JS into QML:
 
+<https://doc.qt.io/qt-6/qtquick-usecase-integratingjs.html>
 
+The above seems to suggest functions can be defined inside Item, but perhaps not further fields. Looking at below on JS expressions in QML:
 
+<https://doc.qt.io/qt-6/qtqml-javascript-expressions.html>
+
+This leads to a number of complexities, as linked to on above page. I am wondering if Model types are more what I need. Seems will need an overview of QML ways of working to figure-out this part.
+
+Searching for help online revealed the following on Stack Overflow, and mention of a FolderListModel, which may be what I need. I am more inclined now, to look at the Model types further.
+
+<https://stackoverflow.com/questions/48318193/how-to-correctly-use-filedialog-in-qml-qt>
+
+<https://doc.qt.io/qt-6/qml-qt-labs-folderlistmodel-folderlistmodel.html#details>
+
+Also noticing the following, further down in the Kirigami examples:
+
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-connect_backend/>
+
+So, it's discouraged to try to describe logic in QML (using JS, presumably), so the preference is to send data into the back-end.
+
+Scanning the above...
+
+Further to that, I looked more deeply into the interaction between QML and Qt/C++, from the QML/Qt book. It seems deeply linked to the QObject model and the way Qt uses signals and slots. I need to get at least the basics of that understood, without going too deep for too long, hopefully. I will be using the KDE examples to inform me further. I also understand model, view and delegate differently after last night's reading, and need to see how that's all fitting together too, in the Kirigami examples.
+
+Reviewing the examples, reading in more detail, starting with
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/>
+
+This time, going into more detail on main.cpp:
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-maincpp/>
+
+Looking at this, for the resource file, though it links to Qt5, which used QMake, rather than CMake which I believe Qt6 standardises to.
+
+<https://doc.qt.io/qt-5/resources.html>
+
+Really appreciating how "real world" this is, in terms of providing for really large software projects, potentially!
+
+Browsing this site, on CMake, the defacto standard C++ build tool(!) I am glad we have this(!)
+
+<https://cmake.org/>
+
+<https://cmake.org/history/>
+
+There is a very good book on this on Kindle, which I may purchase later, as I get more into C++ project builds.
+
+Scanning through this explanation of the top-level CMake file:
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-understanding_cmakelists/>
+
+Scanning through the find_package docs:
+<https://cmake.org/cmake/help/latest/command/find_package.html>
+
+Looking at next page of Kirigami example
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-pages/>
+
+and the Kirigami Gallery it recommends:
+<https://apps.kde.org/en-gb/kirigami2.gallery/>
+
+Installing Kirigami Gallery on Fedora 29 (Gnome Boxes)...
+Played with it. Very interesting!
+
+I am looking at this, on layouts, where it introduces models:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+... also the link to the ListView type in QML, which explains which models it can work with. Again, needing to understand QObject and the hierarchy with it seems essential.
+
+<https://doc.qt.io/qt-6/qml-qtquick-listview.html#details>
+
+This also leads back to
+<https://doc.qt.io/qt-6/qtqml-javascript-topic.html>
+<https://doc.qt.io/qt-6/qtqml-javascript-expressions.html>
+
+and
+
+<https://doc.qt.io/qt-6/qtqml-syntax-signals.html>
+
+This latter I have not seen previously and will look at next.
+It's useful, but it's for signal handling in QML/JS. What I'm more interested in is connecting the front-end to back-end, and apparently that's also done by using signals.
+
+Coming back to
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+it then refers to delegate being what knows how to do the displaying in the view.
+
+Looking closely at the objects and their relationships...
+
+So, the application has a model and a component (which is the delegate). The component/delegate has an abstract card whose content item is a single item, which has a grid layout, and contains a heading, a sub-column layout which has a level-2 heading for the name, a separator and a description; and then a button back in the grid view.
+
+The cards list view as the initial page of the pagestack for the application, is a scrollable page containing the cards list view, whos model and delegate are named using ids.
+
+At the moment the code has not been written for the edit buttons.
+
+The next page of documentation starts referring to actions, which will result in user interaction having an effect:
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-actions/>
+
+Made some changes to main.qml to see if a compilable version of the code can be produced to move forward with.
