@@ -404,3 +404,18 @@ The next page of documentation starts referring to actions, which will result in
 <https://develop.kde.org/docs/getting-started/kirigami/introduction-actions/>
 
 Made some changes to main.qml to see if a compilable version of the code can be produced to move forward with.
+
+Done and committed.
+
+So continuing with the examples, we now have two actions, namely one related to a button added in the main... something? Not sure where that main identifier comes from at the moment, but it appears to be related to the initialPage somehow. It adds a fixed item to the model, which then displays.
+
+The other action is a menu item which calls a standard quit method.
+
+Next looking at page for adding information of our own choosing:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-overlaysheets/>
+
+Also useful on this example is moving focus from item to item, text fields with labels etc. So far, though, it's the model and delegate that are quite tightly linked. What if the model needs only be a string, or an array of strings? Not sure how to manage that. Would it be to use a fileDialog model of some sort, I may have come across? Will see later.
+
+Okay, so now on the next page we're about to come to signals:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-separatefiles/>
+
