@@ -453,3 +453,41 @@ Looking at this, as an example project from "Next steps" suggestion after first 
 
 I think either going further with the basic KDE tutorials would be more helpful, then skipping to the QML/Qt book for more advanced work.
 
+Meantime forked the KDE developer documentation project on github, looked into the code for broken links, submitted a fix via merge-request. Response from a dev who's an expert on that repo says at the moment it's being transitioned from Qt5 to Qt6 so some links are broken, but will be fixed.
+
+From the next steps page, I am most interested in linking QML to the C++ backend, so will look at the four pages about that linked from here:
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-next_steps/>
+
+Firstly, to scan through understanding CMakeLists:
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-understanding_cmakelists/>
+
+The above is important when it comes to ensuring build instructions are complete, but for the moment less-so, because first I need to learn how to exchange information back and forth between QML and Qt.
+
+Onto overview of main.cpp next:
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-maincpp/>
+
+Above looks fairly boiler-plate, just setting up includes for the build and passing command line parameters into the Qt application, plus setting-up a QML engine to start executing, and confirm execution of, with error and exit otherwise.
+
+The next page on connecting the logic together is the really crucial one, I expect:
+
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-connect_backend/>
+
+Writing logic in QML is discouraged, so need to avoid trying to do it in JS within the QML.
+
+Example shows how to create a Backend class, which contains a Q_OBJECT macro, so will need to check against basic Qt docs about this.
+
+It's suggesting additions to main.cpp and adding the new include. It talks of registering a module, again, I expect more on this in the Qt documentation.
+
+It mentions importing the new module into QML.
+
+It then talks about adding a property that can be connected to the frontend and automatically notify frontend and backend of changes.
+
+It makes the property private but adds getter and setter methods, also a signal that doesn't really need implementation.
+
+It shows how to emit the signal in the C++ code... and how to access the appropriate backend field in QML from the frontend.
+
+It then refers further to Qt docs on this subject:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html>
+
+
