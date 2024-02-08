@@ -419,3 +419,24 @@ Also useful on this example is moving focus from item to item, text fields with 
 Okay, so now on the next page we're about to come to signals:
 <https://develop.kde.org/docs/getting-started/kirigami/introduction-separatefiles/>
 
+It's useful in showing how signals are placed next to functions, and shows signal handling, but the example seems unclear because it seems to have definition for AddEditSheet, but doesn't show where that lies in the code. Is it in addEditSheet.qml, above the rest of the definition? Why doesn't it show all of the code clearly in all of the files? Confusing. I wonder if the code is available to download on a repo somewhere. Will have a quick look. Not seeing any links at the start of the tutorial. Will have a look again towards the end.
+
+Have found the repo for the developer website. It's built using Hugo, which has won awards for being the best static site builder.
+
+<https://invent.kde.org/documentation/develop-kde-org>
+
+and
+
+<https://gohugo.io/>
+
+I have shared with KDE community via Matrix that I may be able to submit some merge requests if able to improve developer documentation at some stage, e.g. removed not documented as part of defining AddEditSheet.
+
+The tutorial isn't clear on a few points: why is an instance of overlaysheet being used, not AddEditSheet? Also, very confusing that we seem to have to ids both addEditSheet. How does scoping apply to these?
+
+Good to hear back from KDE community that merge request would be good. Will certainly get to that later when able!
+
+Looking at below for guidance on this:
+<https://www.unrepo.com/gitlab/working-with-gitlab-merge-requests-tutorial>
+
+Some further clarity on when to clone and when to fork would be useful. I think fork when don't have permission to work on the original project, perhaps. New to github/gitlab collaboration, so will look into. For now, back to QML/Qt!
+
