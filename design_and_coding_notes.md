@@ -438,5 +438,18 @@ Good to hear back from KDE community that merge request would be good. Will cert
 Looking at below for guidance on this:
 <https://www.unrepo.com/gitlab/working-with-gitlab-merge-requests-tutorial>
 
-Some further clarity on when to clone and when to fork would be useful. I think fork when don't have permission to work on the original project, perhaps. New to github/gitlab collaboration, so will look into. For now, back to QML/Qt!
+
+Some further clarity on when to clone and when to fork would be useful. I think fork when don't have permission to work on the original project, perhaps. New to github/gitlab collaboration, so will look into.
+
+Further guidance here:
+
+<https://community.kde.org/Infrastructure/GitLab#Submitting_a_merge_request>
+There is a lot there. I am unsure if I have commit access, in which case I should be able to work in a branch without having to fork.
+
+For now, back to QML/Qt!
+
+Looking at this, as an example project from "Next steps" suggestion after first tutorial.
+<https://invent.kde.org/plasma-mobile/calindori/-/tree/master/src/contents/ui?ref_type=heads>
+
+I think either going further with the basic KDE tutorials would be more helpful, then skipping to the QML/Qt book for more advanced work.
 
