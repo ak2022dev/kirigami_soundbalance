@@ -2,6 +2,7 @@ add_executable(soundsbalance)
 
 target_sources(soundsbalance PRIVATE
     main.cpp
+    backend.cpp
     resources.qrc
 )
 

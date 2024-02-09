@@ -11,6 +11,7 @@
 #include <QQuickStyle>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include "backend.h"
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +26,8 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+    Backend backend;
+    qmlRegisterSingletonInstance<Backend>("org.kde.example", 1, 0, "Backend", &backend);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

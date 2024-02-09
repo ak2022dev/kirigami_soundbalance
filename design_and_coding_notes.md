@@ -490,4 +490,18 @@ It shows how to emit the signal in the C++ code... and how to access the appropr
 It then refers further to Qt docs on this subject:
 <https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html>
 
+Resuming with advanced parts of kirigami tutorial...
+
+Looking also at the links for learning C++. This one below seems best:
+<https://www.learncpp.com/>
+
+Next: will try adding Backend class and compiling.
+
+Meantime switched to working in kdevelop rather than Kate. Yes, feels much more comfortable already, especially with easier access to the filesystem.
+
+Have entered the code for connecting backend to frontend based on the example. I am thinking it may not compile because they forgot to say to include backend.h in main.cpp, but will try as-is.
+
+Yes, getting compilation error. Need to add backend.h into main.cpp I think... will try... Yes, that worked. Double-checking, was my mistake I missed reading that from the documentation(!)
+
+
 

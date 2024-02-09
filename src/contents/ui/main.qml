@@ -10,7 +10,7 @@ import QtQuick.Controls 2.15 as Controls
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.20 as Kirigami
-
+import org.kde.example 1.0
 
 // Provide basic features needed for all kirigami apps
 Kirigami.ApplicationWindow {
