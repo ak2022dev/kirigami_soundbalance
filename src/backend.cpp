@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "backend.h"
 
 Backend::Backend(QObject *parent)
@@ -17,3 +18,7 @@ void Backend::setFileName(const QString &fileName)
     Q_EMIT fileNameChanged();
 }
 
+Q_INVOKABLE void Backend::system(const char * command)
+{
+    std::system( command );
+}

@@ -11,6 +11,7 @@ private:
     QString m_fileName = "Hello World!";
 
 public:
+    Q_INVOKABLE void system(const char * command);
     QString fileName() const;
     void setFileName(const QString &fileName);
     Q_SIGNAL void fileNameChanged();

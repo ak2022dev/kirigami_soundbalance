@@ -609,3 +609,15 @@ and the QProcess documentation:
 in particular the execute method:
 
 The Qt version wasn't sending output to the shell. The basic C-style system call is. Committing a current version including test that works.
+
+Next: make a system call linked to opening a file...
+
+Initially will try adding a method into backend that will be called...
+Will refer to this:
+
+<https://doc.qt.io/qt-5/qtqml-cppintegration-exposecppattributes.html>
+
+Looks like I need the Q_INVOKABLE macro...
+Have added it and compiled. Will try calling it... Done. Still works, but method is blank, and calling from cpp. Will try to make it do a system call... Getting a segmentation fault with core dumped. Not sure why... Identified type, missing colon in std::system. Now seems to be working... Will do a commit...
+
+
