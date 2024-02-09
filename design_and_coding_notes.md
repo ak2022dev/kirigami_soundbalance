@@ -577,3 +577,35 @@ Altering relevant code in backend.cpp...
 
 Took out some code that was essentially to test parts of how QML was working. Ready to commit a working version.
 
+Idea: if only getting a single filename from the fileDialog, maybe test by acting only on a single file, perhaps reduce its volume to almost silence?
+
+Will try that on command line using FFMpeg first, then take it from there.
+
+Official docs for FFmpeg are quite hard to follow:
+
+Using below website:
+<https://trac.ffmpeg.org/wiki/AudioVolume>
+
+So initial idea will be to take an audio file and halve its volume.
+
+Fedora has a package version called ffmpeg-free, restricted in some of the codecs it handles. Installed that. Will run some generic tests on it, outside of this git directory.
+
+Using this website:
+<https://freetestdata.com/audio-files/mp3/>
+
+Have downloaded 2MB, then 100KB. The second is long enough for basics tests.
+
+A test like below:
+ffmpeg -i input.wav -filter:a "volume=0.5" output.wav
+
+Did indeed halve the volume. Next will try to add C++ code to execute that command using C's system call or C++/Qt equivalent.
+
+Looking at this page:
+<https://stackoverflow.com/questions/10798916/using-system-command-in-qt>
+
+and the QProcess documentation:
+<https://doc.qt.io/qt-6/qprocess.html>
+
+in particular the execute method:
+
+The Qt version wasn't sending output to the shell. The basic C-style system call is. Committing a current version including test that works.

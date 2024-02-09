@@ -12,9 +12,13 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include "backend.h"
+#include <QProcess>
+#include <cstdlib>
 
 int main(int argc, char *argv[])
 {
+    int value = std::system("ls");
+
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("soundsbalance");
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
@@ -37,4 +41,5 @@ int main(int argc, char *argv[])
     }
 
     return app.exec();
+
 }
