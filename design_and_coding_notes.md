@@ -505,5 +505,9 @@ Yes, getting compilation error. Need to add backend.h into main.cpp I think... w
 
 Added the code to actually do something with the backend link. I adapted the tutorial into my example and ran it. Works!
 
+Next step: to go deeper into this as recommended:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html>
 
+The above is quite extensive. May be possible to use the code as-is to achieve some of what is required.
 
+I have tried calling setter method in QML code but not working. Will record this version as WIP.

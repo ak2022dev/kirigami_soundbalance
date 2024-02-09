@@ -27,7 +27,6 @@ Kirigami.ApplicationWindow {
     pageStack.initialPage: Kirigami.Page {
         Item {
             id: filesListItem
-//            filesList: ""
         }
 
         ColumnLayout {
@@ -49,8 +48,7 @@ Kirigami.ApplicationWindow {
                 title: "Please choose a file"
                 onAccepted: {
                     console.log("Files chosen: " + fileDialog.fileUrls )
-//                    filesListItem.filesList = fileDialog.fileUrls.toString()
-//                    console.log("Value of filesList: " + filesListItem.filesList )
+                    Backend.setIntroductionText( fileDialog.fileUrls.toString() )
                     Qt.quit()
                 }
                 onRejected: {
