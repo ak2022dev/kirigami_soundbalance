@@ -47,8 +47,12 @@ Kirigami.ApplicationWindow {
                 id: fileDialog
                 title: "Please choose a file"
                 onAccepted: {
+                    var result = fileDialog.fileUrl
                     console.log("Files chosen: " + fileDialog.fileUrls )
+                    console.log("File chosen: " + result )
                     Backend.setIntroductionText( fileDialog.fileUrls.toString() )
+                    Backend.introductionText = result.toString()
+                    console.log("Backend.introductionText is: " + Backend.introductionText )
                     Qt.quit()
                 }
                 onRejected: {

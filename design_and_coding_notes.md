@@ -510,4 +510,60 @@ Next step: to go deeper into this as recommended:
 
 The above is quite extensive. May be possible to use the code as-is to achieve some of what is required.
 
-I have tried calling setter method in QML code but not working. Will record this version as WIP.
+I have tried calling setter method in QML code but not working. Will record this version as WIP. Error output is:
+qrc:/main.qml:51: TypeError: Property 'setIntroductionText' of object Backend(0x7ffe85fd3730) is not a function
+
+Will look more carefully at existing changes that do work, so far... The kirigami example shows how to use the getter but not the setter; I need the latter. Will check for examples of that next.
+
+Looking at the below, but it's very old. Will search for a newer example:
+
+<https://forum.qt.io/topic/33170/call-c-function-from-qml/2>
+
+Looking at below:
+<https://devcodef1.com/news/1133862/qt6-linking-c-model-to-qml-listview>
+
+It's newer, and seems to be calling method with ease. I wonder if it's to do with how the connection has been made...
+
+Looking again at:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-definetypes.html>
+
+but first at:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-exposecppattributes.html>
+
+and may also need to come back to:
+<https://doc.qt.io/qt-5/metaobjects.html>
+
+also, apparently, the following tutorial is good for exemplifying; may need to come back to:
+<https://doc.qt.io/qt-5/qtqml-tutorials-extending-qml-example.html>
+
+Type conversion may also be an issue. May need to come back to this:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-data.html>
+
+Apparently data ownership may also be an issue to come back to:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-data.html#data-ownership>
+
+The expose attributes page is very useful!
+<https://doc.qt.io/qt-5/qtqml-cppintegration-exposecppattributes.html>
+
+The tricky thing is indeed the registering correctly with the engine, it seems...
+When using QPROPERTY, READ etc name the method within the class.
+
+Yes, the expose attributes page does seem the most useful. I will look again at my app accordingly.
+
+Am finding that fileDialog.fileUrls seems to undefined. Will try to get console output working again to do some debugging...
+
+Will try running using these command line parameters:
+QT_LOGGING_RULES="*.debug=true; qt.*.debug=false" ./soundsbalance
+
+The console output appears to be showing the correct file, when only one file selected... Trying to select more than one with ctrl-click doesn't seem to work. Will need to consider return type from the fileDialog perhaps, then work with that...
+
+<https://doc.qt.io/qt-5/qml-qtquick-dialogs-filedialog.html#fileUrls-prop>
+
+According to above, it's a list<url>. Would toString() work for that...?
+Perhaps it should be .fileUrl not fileUrls...? Will try...
+
+Console still gives correct output, but it won't allow me to call toString on it...?
+
+Have considered examples from exposing attributes carefully, and noticed use of local variable. Tried the same and code now seems to work. Will commit before tidying up.
+
+
