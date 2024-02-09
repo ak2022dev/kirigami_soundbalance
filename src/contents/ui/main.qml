@@ -34,6 +34,9 @@ Kirigami.ApplicationWindow {
             Controls.Label {
                 text: i18n("Sounds Balance!")
             }
+            Controls.Label {
+                text:Backend.introductionText
+            }
             Controls.Button {
                 id: openFilesButton
                 text: i18n("Open Files")

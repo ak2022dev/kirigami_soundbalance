@@ -503,5 +503,7 @@ Have entered the code for connecting backend to frontend based on the example. I
 
 Yes, getting compilation error. Need to add backend.h into main.cpp I think... will try... Yes, that worked. Double-checking, was my mistake I missed reading that from the documentation(!)
 
+Added the code to actually do something with the backend link. I adapted the tutorial into my example and ran it. Works!
+
 
 
