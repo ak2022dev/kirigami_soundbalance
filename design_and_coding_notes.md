@@ -566,4 +566,14 @@ Console still gives correct output, but it won't allow me to call toString on it
 
 Have considered examples from exposing attributes carefully, and noticed use of local variable. Tried the same and code now seems to work. Will commit before tidying up.
 
+Next: tidy up current app so that variable names for exchange between front and backend actually match the task they have. Will go back to example to ensure no steps missed:
+
+<https://develop.kde.org/docs/getting-started/kirigami/advanced-connect_backend/>
+
+Altering the Q_PROPERTY line in backend.h first...
+Altering private property in backend.h...
+Altering public fields in backend.h...
+Altering relevant code in backend.cpp...
+
+Took out some code that was essentially to test parts of how QML was working. Ready to commit a working version.
 

@@ -6,14 +6,14 @@ Backend::Backend(QObject *parent)
 
 }
 
-QString Backend::introductionText() const
+QString Backend::fileName() const
 {
-    return m_introductionText;
+    return m_fileName;
 }
 
-void Backend::setIntroductionText(const QString &introductionText)
+void Backend::setFileName(const QString &fileName)
 {
-    m_introductionText = introductionText;
-    Q_EMIT introductionTextChanged();
+    m_fileName = fileName;
+    Q_EMIT fileNameChanged();
 }
 

@@ -25,16 +25,9 @@ Kirigami.ApplicationWindow {
     // Set the first page that will be loaded when the app opens
     // This can also be set to an id of a Kirigami.Page
     pageStack.initialPage: Kirigami.Page {
-        Item {
-            id: filesListItem
-        }
-
         ColumnLayout {
             Controls.Label {
                 text: i18n("Sounds Balance!")
-            }
-            Controls.Label {
-                text:Backend.introductionText
             }
             Controls.Button {
                 id: openFilesButton
@@ -48,11 +41,9 @@ Kirigami.ApplicationWindow {
                 title: "Please choose a file"
                 onAccepted: {
                     var result = fileDialog.fileUrl
-                    console.log("Files chosen: " + fileDialog.fileUrls )
                     console.log("File chosen: " + result )
-                    Backend.setIntroductionText( fileDialog.fileUrls.toString() )
-                    Backend.introductionText = result.toString()
-                    console.log("Backend.introductionText is: " + Backend.introductionText )
+                    Backend.fileName = result.toString()
+                    console.log("Backend.fileName is: " + Backend.fileName )
                     Qt.quit()
                 }
                 onRejected: {
