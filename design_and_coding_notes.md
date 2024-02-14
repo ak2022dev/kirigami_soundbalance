@@ -726,3 +726,8 @@ After further minor fix to main.qml, on running:
 qrc:/main.qml:46: ReferenceError: QString is not defined
 
 Will commit as-is, and look at QML type conversions, potentially.
+
+According to this:
+<https://doc.qt.io/qt-6/qtqml-cppintegration-data.html>
+
+Automatic type conversion from QString to QML string and vice versa. Yes! It appears to have worked when I took out the attempt to create a new QString in QML. Double-checking...

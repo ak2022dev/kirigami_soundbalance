@@ -17,8 +17,6 @@
 
 int main(int argc, char *argv[])
 {
-//    int value = std::system("ls");
-
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("soundsbalance");
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
@@ -32,8 +30,6 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     Backend backend;
     qmlRegisterSingletonInstance<Backend>("org.kde.example", 1, 0, "Backend", &backend);
-//    int value = std::system("ls");
-    backend.system(QString("ls"));
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 

@@ -43,7 +43,7 @@ Kirigami.ApplicationWindow {
                     var result = fileDialog.fileUrl
                     console.log("File chosen: " + result )
                     Backend.fileName = result.toString()
-                    Backend.system(QString("ls"))
+                    Backend.system("ls")
                     console.log("Backend.fileName is: " + Backend.fileName )
                     Qt.quit()
                 }
