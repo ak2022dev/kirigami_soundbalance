@@ -651,3 +651,78 @@ Looking back at my history, am going to change just main.qml next if needed... P
 
 Quite a few type errors. Going to review my C++ object creation and references briefly...  Approx first 135 pages of C++(11) book most relevant. 2022 edition of Tour of C++ may also be useful, if a new edition of C++ book not due out soon, as 2023 version is about to be released.
 
+Read about 200 pages from C++ book past couple of days, and skimmed next 400. Getting there with the QML coding too. Some bits aren’t visible on Kindle. Looking at the QML5 version on-screen now IA. Hmm. Not sure where my Qt is installed, because the env variable it mentions isn’t set in my environment. Reading on. Reached section on transformations. Not sure this is so relevant. Skipping forward IA… Layouts and anchoring are more relevant… Reached 4.7 on Input elements. May have to come back to FocusScope… So… TextInput is one line, TextEdit is more than one line. Keys element also useful. Interesting that QML and JS are interpreted, but can be compiled too. I think Kirigami compiles. Chapter 5 animations, not that relevant for the minute, at least IA… 5.2 states, may be relevant… Yes, explicit coding of states could be useful. They seem to be frowning upon it though, due to excess JS? I wonder if Qt has a similar thing? What about React? A lot of the Qt5 docs look unreadable. I think I’ll need to find the online version.
+
+Yes, found it here:
+<https://qmlbook.github.io/index.html>
+
+There is an example of using the fileDialog, but it just sets an image to the url from the dialog: very high level. Scanned through chapter 6, onto chapter 7 now, on model-view-delegate. It’s talking about a repeater. May return to this. All of it may become relevant, but not just yet. I need to move onto the JS types that QML understands, then getting those into the backend. It’s talking about Felgo. First I’ve heard of that. It does still exist, and has migrated to Qt6, which is good news. Multimedia chapter looks interesting, but still prefer to use backend Ffmpeg. Chapter 13 networking example also looks useful! REST example included, Oauth and Web sockets too. 14 on SQL, but again, for later. 15 on dynamic QML may become relevant later, not sure. Perhaps some of the controls already manage this kind of thing? Will have to check. The JS chapter (16) is definitely useful, especially, looking at the function calling part. Not sure about things like using eval. Chapter 17, Qt and C++ is probably quite relevant.
+
+Just been scanning through. It’s saying model view programming is one of the hardest tasks in Qt. Will be great to get it done.
+
+Have read a number of chapters from the book now. Focused somewhat on the Qt chapter, to get an overview, also on slots. Looked at how to create a model, which is indeed tricky. Still a bit stuck on the types and possible type conversions, but will focus on that next. Also will open the project and commit some changes into the design/coding notes from this document.
+
+Reminding myself of where I am in the code, committed as WIP:
+
+Second stage build:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp: In function ‘int main(int, char**)’:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:36:20: error: cannot bind non-const lvalue reference of type ‘QString&’ to an rvalue of type ‘QString’
+  36 |     backend.system("ls");
+     |                    ^~~~
+In file included from /usr/include/qt5/QtCore/qcoreapplication.h:44,
+                from /usr/include/qt5/QtWidgets/qapplication.h:44,
+                from /usr/include/qt5/QtWidgets/QApplication:1,
+                from /home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:7:
+/usr/include/qt5/QtCore/qstring.h:835:31: note:   after user-defined conversion: ‘QString::QString(const char*)’
+ 835 |     inline QT_ASCII_CAST_WARN QString(const char *ch)
+     |                               ^~~~~~~
+In file included from /home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:14:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/backend.h:15:38: note:   initializing argument 1 of ‘void Backend::system(QString&)’
+  15 |     Q_INVOKABLE void system(QString &command);
+     |                             ~~~~~~~~~^~~~~~~
+
+Will go through and review some of this in light of reading past couple of days.
+
+Looking at main.cpp first, and noticing backend.system is expecting QString&, will try fixing...
+
+Changing to this:
+backend.system(QString::QString("ls"));
+
+Gave me:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp: In function ‘int main(int, char**)’:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:36:36: error: cannot call constructor ‘QString::QString’ directly [-fpermissive]
+   36 |     backend.system(QString::QString("ls"));
+      |                    ~~~~~~~~~~~~~~~~^~~~~~
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:36:36: note: for a function-style cast, remove the redundant ‘::QString’
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:36:36: error: cannot bind non-const lvalue reference of type ‘QString&’ to an rvalue of type ‘QString’
+In file included from /home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:14:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/backend.h:15:38: note:   initializing argument 1 of ‘void Backend::system(QString&)’
+   15 |     Q_INVOKABLE void system(QString &command);
+      |                             ~~~~~~~~~^~~~~~~
+gmake[2]: *** [src/CMakeFiles/soundsbalance.dir/build.make:97: src/CMakeFiles/soundsbalance.dir/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:153: src/CMakeFiles/soundsbalance.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
+
+So seems to be a problem with it being a reference as well. Will try adjusting that...
+
+So have removed the reference and will try again...
+
+Fewer errors. Now have:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp: In function ‘int main(int, char**)’:
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:36:36: error: cannot call constructor ‘QString::QString’ directly [-fpermissive]
+   36 |     backend.system(QString::QString("ls"));
+      |                    ~~~~~~~~~~~~~~~~^~~~~~
+/home/ark/Documents/Coding/kde5/kirigami/soundsbalance/src/main.cpp:36:36: note: for a function-style cast, remove the redundant ‘::QString’
+gmake[2]: *** [src/CMakeFiles/soundsbalance.dir/build.make:97: src/CMakeFiles/soundsbalance.dir/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:153: src/CMakeFiles/soundsbalance.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
+
+Changed to
+    backend.system(QString("ls"));
+
+Now compiles...
+
+After further minor fix to main.qml, on running:
+qrc:/main.qml:46: ReferenceError: QString is not defined
+
+Will commit as-is, and look at QML type conversions, potentially.

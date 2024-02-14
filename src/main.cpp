@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     Backend backend;
     qmlRegisterSingletonInstance<Backend>("org.kde.example", 1, 0, "Backend", &backend);
 //    int value = std::system("ls");
-    backend.system("ls");
+    backend.system(QString("ls"));
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 

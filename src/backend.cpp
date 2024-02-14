@@ -19,7 +19,7 @@ void Backend::setFileName(const QString &fileName)
     Q_EMIT fileNameChanged();
 }
 
-Q_INVOKABLE void Backend::system(QString &command)
+Q_INVOKABLE void Backend::system(QString command)
 {
     const char * c_string = qPrintable( command );
     std::system( c_string );
