@@ -1,3 +1,4 @@
+#include <QtGlobal>
 #include <cstdlib>
 #include "backend.h"
 
@@ -18,7 +19,8 @@ void Backend::setFileName(const QString &fileName)
     Q_EMIT fileNameChanged();
 }
 
-Q_INVOKABLE void Backend::system(const char * command)
+Q_INVOKABLE void Backend::system(QString &command)
 {
-    std::system( command );
+    const char * c_string = qPrintable( command );
+    std::system( c_string );
 }

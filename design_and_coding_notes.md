@@ -620,4 +620,34 @@ Will refer to this:
 Looks like I need the Q_INVOKABLE macro...
 Have added it and compiled. Will try calling it... Done. Still works, but method is blank, and calling from cpp. Will try to make it do a system call... Getting a segmentation fault with core dumped. Not sure why... Identified type, missing colon in std::system. Now seems to be working... Will do a commit...
 
+In my commit I noted next step was to try making a system call from QML. Adding that next.
+
+Getting this error:
+qrc:/main.qml:46: Error: Unknown method parameter type: const char*
+
+Looks like to call the method in QML, need a type that QML can easily deal with. Will look into next.
+
+Starting from this page again:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-exposecppattributes.html>
+
+It's mentioning this, which might be relevant:
+<https://doc.qt.io/qt-5/qtqml-cppintegration-data.html>
+
+It appears that C-style low-level char* type strings aren't available to QML. Seems like the easiest thing would be to pass down a QString, then convert that in C++ backend before making the system call.
+
+Looking at below:
+<https://stackoverflow.com/questions/2523765/qstring-to-char-conversion>
+
+and this:
+<https://doc.qt.io/qt-5/qtglobal.html#qPrintable>
+
+Having changed the type of the C++ backend function, need to check where I might need to declare these changes, then make them:
+
+backend.cpp...   backend.h...
+
+I am unsure if there are further declarations that may be necessary in other files, e.g. for QML resources. Will check back in my git history using gittyup to find the last time I modified a set of files for a C++ backend function update...
+
+Looking back at my history, am going to change just main.qml next if needed... Possibly don't need to anyway. Will try compiling...
+
+Quite a few type errors. Going to review my C++ object creation and references briefly...  Approx first 135 pages of C++(11) book most relevant. 2022 edition of Tour of C++ may also be useful, if a new edition of C++ book not due out soon, as 2023 version is about to be released.
 
