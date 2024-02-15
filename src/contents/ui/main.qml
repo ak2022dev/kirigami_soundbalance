@@ -80,6 +80,10 @@ Kirigami.ApplicationWindow {
             }
             Controls.Button {
                 text: i18n("Balance Files")
+                onClicked: {
+                    Backend.system("mp3gain -r " + textField1.text + " " + textField2.text)
+                    Qt.quit()
+                }
             }
             Controls.Button {
                 text: i18n("Cancel opened Files")

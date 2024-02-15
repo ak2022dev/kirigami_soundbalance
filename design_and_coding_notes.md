@@ -764,3 +764,4 @@ Going to see if can do the above just in JS...
 
 Managed the above, cleaned-up code including removing old comments, relabeling buttons etc. Ready to commit and move forward.
 Next step: to call the external program on the two chosen files.
+Done and tested. Will commit. Next, clean up interface, as to when application quits.
