@@ -34,6 +34,7 @@ Kirigami.ApplicationWindow {
             }
             Controls.TextField {
                 id: textField1
+                text: ""
             }
             Controls.Button {
                 id: openFilesButton1
@@ -59,12 +60,13 @@ Kirigami.ApplicationWindow {
                 id: fileDialog1
                 title: "Please choose a file"
                 onAccepted: {
-//                    var result = fileDialog.fileUrl
+                    var result = fileDialog1.fileUrl
 //                    console.log("File chosen: " + result )
 //                    Backend.fileName = result.toString()
 //                    Backend.system("mp3gain -r Free_Test_Data_100KB_MP3.mp3 output.mp3")
 //                    console.log("Backend.fileName is: " + Backend.fileName )
-                    Qt.quit()
+                    textField1.text = result
+//                    Qt.quit()
                 }
                 onRejected: {
                     console.log("Cancelled")
