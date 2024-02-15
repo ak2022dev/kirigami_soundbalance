@@ -42,6 +42,12 @@ Kirigami.ApplicationWindow {
                     fileDialog.open();
                 }
             }
+            Controls.Label {
+                text: i18n("Audio file 2:")
+            }
+            Controls.TextField {
+                id: textField2
+            }
             FileDialog {
                 id: fileDialog
                 title: "Please choose a file"
