@@ -749,11 +749,18 @@ Next: will copy the two files into the folder where the app is run from, and har
 
 Worked. Will commit.
 
-Looking-up properties of TextField... Seems it will need a separate label. Adding... Now added two text fields. Will commit, then try adding an additional button and figure out the logic for that. Added a second button. Also added a second dialog, because the effect of each needs to be different. Not sure if this is the optimal way, but will try it for now. Also tied choosing a file to populating one of the text fields. Will commit, add for second, then test and commit.
-
-
-
 Next steps. Maybe use the fileDialog to populate a text field, then a second text field, and then run the command?
 Will revisit existing code and start refactoring.
 Have commented-out what the app did after file selected, for now, apart from quit. Will continue to add to app piecemeal, with commits in-between.
 
+Looking-up properties of TextField... Seems it will need a separate label. Adding... Now added two text fields. Will commit, then try adding an additional button and figure out the logic for that. Added a second button. Also added a second dialog, because the effect of each needs to be different. Not sure if this is the optimal way, but will try it for now. Also tied choosing a file to populating one of the text fields. Will commit, add for second, then test and commit.
+
+Done the above. Next will look at changing the url into a filename. It would appear that removing the first few characters and adding a ~ should do the trick on Linux.
+E.g. "file:///home/ark/Documents/Coding/kde5/kirigami/soundsbalance/build/src/Makefile"
+->               "~ark/Documents/Coding/kde5/kirigami/soundsbalance/build/src/Makefile"
+
+Going to see if can do the above just in JS...
+<https://bobbyhadz.com/blog/javascript-remove-first-n-characters-from-string#remove-the-first-n-characters-from-a-string-using-stringslice>
+
+Managed the above, cleaned-up code including removing old comments, relabeling buttons etc. Ready to commit and move forward.
+Next step: to call the external program on the two chosen files.

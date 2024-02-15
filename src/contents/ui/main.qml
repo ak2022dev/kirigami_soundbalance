@@ -38,7 +38,7 @@ Kirigami.ApplicationWindow {
             }
             Controls.Button {
                 id: openFilesButton1
-                text: i18n("Open Files")
+                text: i18n("Open File 1")
                 onClicked: {
                     fileDialog1.open();
                 }
@@ -51,7 +51,7 @@ Kirigami.ApplicationWindow {
             }
             Controls.Button {
                 id: openFilesButton2
-                text: i18n("Open Files")
+                text: i18n("Open File 2")
                 onClicked: {
                     fileDialog2.open();
                 }
@@ -60,13 +60,7 @@ Kirigami.ApplicationWindow {
                 id: fileDialog1
                 title: "Please choose a file"
                 onAccepted: {
-                    var result = fileDialog1.fileUrl
-//                    console.log("File chosen: " + result )
-//                    Backend.fileName = result.toString()
-//                    Backend.system("mp3gain -r Free_Test_Data_100KB_MP3.mp3 output.mp3")
-//                    console.log("Backend.fileName is: " + Backend.fileName )
-                    textField1.text = result
-//                    Qt.quit()
+                    textField1.text = "~" + fileDialog1.fileUrl.toString().slice(13)
                 }
                 onRejected: {
                     console.log("Cancelled")
@@ -77,13 +71,7 @@ Kirigami.ApplicationWindow {
                 id: fileDialog2
                 title: "Please choose a file"
                 onAccepted: {
-                    var result = fileDialog2.fileUrl
-//                    console.log("File chosen: " + result )
-//                    Backend.fileName = result.toString()
-//                    Backend.system("mp3gain -r Free_Test_Data_100KB_MP3.mp3 output.mp3")
-//                    console.log("Backend.fileName is: " + Backend.fileName )
-                    textField2.text = result
-//                    Qt.quit()
+                    textField2.text = "~" + fileDialog2.fileUrl.toString().slice(13)
                 }
                 onRejected: {
                     console.log("Cancelled")
