@@ -43,7 +43,7 @@ Kirigami.ApplicationWindow {
                     var result = fileDialog.fileUrl
                     console.log("File chosen: " + result )
                     Backend.fileName = result.toString()
-                    Backend.system("ls")
+                    Backend.system("mp3gain -r Free_Test_Data_100KB_MP3.mp3 output.mp3")
                     console.log("Backend.fileName is: " + Backend.fileName )
                     Qt.quit()
                 }

@@ -730,4 +730,21 @@ Will commit as-is, and look at QML type conversions, potentially.
 According to this:
 <https://doc.qt.io/qt-6/qtqml-cppintegration-data.html>
 
-Automatic type conversion from QString to QML string and vice versa. Yes! It appears to have worked when I took out the attempt to create a new QString in QML. Double-checking...
+Automatic type conversion from QString to QML string and vice versa. Yes! It appears to have worked when I took out the attempt to create a new QString in QML. Double-checking... Done and committed.
+
+Next: plan is to check if FFMpeg can give me some kind of average volume analysis for a given file...
+Ah... it looks like mp3gain can do what I need directly. Might use that instead of FFMpeg. Just checking...
+Installed on Fedora. Looking up how to use...
+
+<https://www.mankier.com/1/mp3gain>
+
+Looks like we need:
+mp3gain -r [list of filenames separated by spaces]
+
+Need to go through and test the above as next step.
+
+So, above should set all files to same volume. Going to try testing that...
+Yes, I have run the tests and they worked.
+Next: will copy the two files into the folder where the app is run from, and hard-code running it from the app.
+
+Worked. Will commit.
