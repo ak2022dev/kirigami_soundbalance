@@ -36,7 +36,7 @@ Kirigami.ApplicationWindow {
                 id: textField1
             }
             Controls.Button {
-                id: openFilesButton
+                id: openFilesButton1
                 text: i18n("Open Files")
                 onClicked: {
                     fileDialog.open();
@@ -47,6 +47,13 @@ Kirigami.ApplicationWindow {
             }
             Controls.TextField {
                 id: textField2
+            }
+            Controls.Button {
+                id: openFilesButton2
+                text: i18n("Open Files")
+                onClicked: {
+                    fileDialog.open();
+                }
             }
             FileDialog {
                 id: fileDialog
