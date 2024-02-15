@@ -64,7 +64,7 @@ Kirigami.ApplicationWindow {
                 }
                 onRejected: {
                     console.log("Cancelled")
-                    Qt.quit()
+                    fileDialog1.close()
                 }
             }
             FileDialog {
@@ -75,7 +75,7 @@ Kirigami.ApplicationWindow {
                 }
                 onRejected: {
                     console.log("Cancelled")
-                    Qt.quit()
+                    fileDialog2.close()
                 }
             }
             Controls.Button {
