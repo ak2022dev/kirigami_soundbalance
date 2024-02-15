@@ -39,7 +39,7 @@ Kirigami.ApplicationWindow {
                 id: openFilesButton1
                 text: i18n("Open Files")
                 onClicked: {
-                    fileDialog.open();
+                    fileDialog1.open();
                 }
             }
             Controls.Label {
@@ -52,11 +52,27 @@ Kirigami.ApplicationWindow {
                 id: openFilesButton2
                 text: i18n("Open Files")
                 onClicked: {
-                    fileDialog.open();
+                    fileDialog2.open();
                 }
             }
             FileDialog {
-                id: fileDialog
+                id: fileDialog1
+                title: "Please choose a file"
+                onAccepted: {
+//                    var result = fileDialog.fileUrl
+//                    console.log("File chosen: " + result )
+//                    Backend.fileName = result.toString()
+//                    Backend.system("mp3gain -r Free_Test_Data_100KB_MP3.mp3 output.mp3")
+//                    console.log("Backend.fileName is: " + Backend.fileName )
+                    Qt.quit()
+                }
+                onRejected: {
+                    console.log("Cancelled")
+                    Qt.quit()
+                }
+            }
+            FileDialog {
+                id: fileDialog2
                 title: "Please choose a file"
                 onAccepted: {
 //                    var result = fileDialog.fileUrl

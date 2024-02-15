@@ -749,7 +749,7 @@ Next: will copy the two files into the folder where the app is run from, and har
 
 Worked. Will commit.
 
-Looking-up properties of TextField... Seems it will need a separate label. Adding... Now added two text fields. Will commit, then try adding an additional button and figure out the logic for that.
+Looking-up properties of TextField... Seems it will need a separate label. Adding... Now added two text fields. Will commit, then try adding an additional button and figure out the logic for that. Added a second button. Also added a second dialog, because the effect of each needs to be different. Not sure if this is the optimal way, but will try it for now.
 
 Next steps. Maybe use the fileDialog to populate a text field, then a second text field, and then run the command?
 Will revisit existing code and start refactoring.
