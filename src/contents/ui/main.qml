@@ -29,15 +29,18 @@ Kirigami.ApplicationWindow {
             Controls.Label {
                 text: i18n("Sounds Balance!")
             }
+            Controls.Label {
+                text: i18n("Audio file 1:")
+            }
+            Controls.TextField {
+                id: textField1
+            }
             Controls.Button {
                 id: openFilesButton
                 text: i18n("Open Files")
                 onClicked: {
                     fileDialog.open();
                 }
-            }
-            Controls.TextField {
-                id: textField1
             }
             FileDialog {
                 id: fileDialog

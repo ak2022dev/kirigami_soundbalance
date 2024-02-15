@@ -749,6 +749,8 @@ Next: will copy the two files into the folder where the app is run from, and har
 
 Worked. Will commit.
 
+Looking-up properties of TextField... Seems it will need a separate label. Adding...
+
 Next steps. Maybe use the fileDialog to populate a text field, then a second text field, and then run the command?
 Will revisit existing code and start refactoring.
 Have commented-out what the app did after file selected, for now, apart from quit. Will continue to add to app piecemeal, with commits in-between.
