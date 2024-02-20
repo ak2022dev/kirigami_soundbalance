@@ -29,31 +29,35 @@ Kirigami.ApplicationWindow {
             Controls.Label {
                 text: i18n("Sounds Balance!")
             }
-            Controls.Label {
-                text: i18n("Audio file 1:")
-            }
-            Controls.TextField {
-                id: textField1
-                text: ""
-            }
-            Controls.Button {
-                id: openFilesButton1
-                text: i18n("Open File 1")
-                onClicked: {
-                    fileDialog1.open();
+            RowLayout {
+                Controls.Label {
+                    text: i18n("Audio file 1:")
+                }
+                Controls.TextField {
+                    id: textField1
+                    text: ""
+                }
+                Controls.Button {
+                    id: openFilesButton1
+                    text: i18n("Open File 1")
+                    onClicked: {
+                        fileDialog1.open();
+                    }
                 }
             }
-            Controls.Label {
-                text: i18n("Audio file 2:")
-            }
-            Controls.TextField {
-                id: textField2
-            }
-            Controls.Button {
-                id: openFilesButton2
-                text: i18n("Open File 2")
-                onClicked: {
-                    fileDialog2.open();
+            RowLayout {
+                Controls.Label {
+                    text: i18n("Audio file 2:")
+                }
+                Controls.TextField {
+                    id: textField2
+                }
+                Controls.Button {
+                    id: openFilesButton2
+                    text: i18n("Open File 2")
+                    onClicked: {
+                        fileDialog2.open();
+                    }
                 }
             }
             FileDialog {
@@ -78,15 +82,17 @@ Kirigami.ApplicationWindow {
                     fileDialog2.close()
                 }
             }
-            Controls.Button {
-                text: i18n("Balance Files")
-                onClicked: {
-                    Backend.system("mp3gain -r " + textField1.text + " " + textField2.text)
-                    Qt.quit()
+            RowLayout {
+                Controls.Button {
+                    text: i18n("Balance Files")
+                    onClicked: {
+                        Backend.system("mp3gain -r " + textField1.text + " " + textField2.text)
+                        Qt.quit()
+                    }
                 }
-            }
-            Controls.Button {
-                text: i18n("Cancel opened Files")
+                Controls.Button {
+                    text: i18n("Cancel opened Files")
+                }
             }
         }
     }

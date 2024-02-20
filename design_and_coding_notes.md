@@ -738,7 +738,7 @@ Installed on Fedora. Looking up how to use...
 
 <https://www.mankier.com/1/mp3gain>
 
-Looks like we need:
+Looks like we need:https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/
 mp3gain -r [list of filenames separated by spaces]
 
 Need to go through and test the above as next step.
@@ -766,4 +766,26 @@ Managed the above, cleaned-up code including removing old comments, relabeling b
 Next step: to call the external program on the two chosen files.
 Done and tested. Will commit. Next, clean up interface, as to when application quits.
 Done. Will commit.
+
+Will rerun app, and sketch how it should look, compared to how it currently looks, then change it piecemeal.
+KDevelop keeps writing error output to the console, will try technique from this page:
+
+<https://stackoverflow.com/questions/44758736/redirect-stderr-to-dev-null>
+
+Not sure if that's worked, but was worth a try...
+
+I've done the sketch. Just need to lookup the type of layouts, mentioned in Kirigami documentation...
+
+Looking at this example:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-getting_started/>
+
+I think I'll try for a KirigamiApplication at the top level, then work from there...
+
+Seems I already have that, so will look deeper at the structure...
+
+I think I need a column of rows of things. Looking up how to get a row...
+From this page:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+Looks like need RowLayouts...
 
