@@ -795,3 +795,11 @@ Looking at this:
 
 Doesn't appear to be any reference about explicit sizing, so will leave that for now.
 Next, considering writing a shell script to enable easier testing...
+
+Idea: get two files, check they're not copyrighted and at different volumes, place them in a test source files folder, write a shell script that will copy them to a known location every time it's run.
+
+Added directory structure and created a shell file, to be run in the testsources directory, by typing
+sh ./test_setup.sh
+
+The above will create a copy of the two test files into the ../test directory.
+
