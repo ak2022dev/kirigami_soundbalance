@@ -60,6 +60,18 @@ Kirigami.ApplicationWindow {
                     }
                 }
             }
+            RowLayout {
+                Controls.Button {
+                    text: i18n("Balance Files")
+                    onClicked: {
+                        Backend.system("mp3gain -r " + textField1.text + " " + textField2.text)
+                        Qt.quit()
+                    }
+                }
+                Controls.Button {
+                    text: i18n("Cancel opened Files")
+                }
+            }
             FileDialog {
                 id: fileDialog1
                 title: "Please choose a file"
@@ -80,18 +92,6 @@ Kirigami.ApplicationWindow {
                 onRejected: {
                     console.log("Cancelled")
                     fileDialog2.close()
-                }
-            }
-            RowLayout {
-                Controls.Button {
-                    text: i18n("Balance Files")
-                    onClicked: {
-                        Backend.system("mp3gain -r " + textField1.text + " " + textField2.text)
-                        Qt.quit()
-                    }
-                }
-                Controls.Button {
-                    text: i18n("Cancel opened Files")
                 }
             }
         }

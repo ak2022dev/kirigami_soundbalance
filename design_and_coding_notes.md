@@ -788,4 +788,10 @@ From this page:
 <https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
 
 Looks like need RowLayouts...
+Did that and committed. Also logically reorganised code to put non-visual elements last. Next looking at centering title label and making longer the filename text fields... Looks like Kirigami discourages absolute sizes, which makes sense to keep it responsive. May look at lower-level QML components for now, though. Idea: lookup what's included in QtControls and move forward from there...
 
+Looking at this:
+<https://doc.qt.io/qt-5/qml-qtquick-controls2-label.html>
+
+Doesn't appear to be any reference about explicit sizing, so will leave that for now.
+Next, considering writing a shell script to enable easier testing...
