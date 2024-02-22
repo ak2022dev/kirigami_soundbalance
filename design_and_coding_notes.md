@@ -803,3 +803,4 @@ sh ./test_setup.sh
 
 The above will create a copy of the two test files into the ../test directory.
 
+Next steps: scan in annotated code from previously and update README. Tag at this stage, before moving to a model-view-delegate version.
