@@ -37,6 +37,10 @@ Kirigami.ApplicationWindow {
                     Controls.Label {
                         text: filename
                     }
+                    Controls.Button {
+                        id: openFilesButton
+                        text: i18n("Open File")
+                    }
                 }
             }
         }
