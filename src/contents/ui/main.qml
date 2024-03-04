@@ -22,6 +22,19 @@ Kirigami.ApplicationWindow {
     // and provides additional context for the translators
     title: i18nc("@title:window", "Sounds Balance")
 
+    globalDrawer: Kirigami.GlobalDrawer {
+        // Makes drawer a small menu rather than sliding pane
+        isMenu: true
+        actions: [
+            Kirigami.Action {
+                text: i18n("Quit")
+                icon.name: "gtk-quit"
+                shortcut: StandardKey.Quit
+                onTriggered: Qt.quit()
+            }
+        ]
+    }
+
     ListModel {
         id: soundFileModel
         ListElement {
