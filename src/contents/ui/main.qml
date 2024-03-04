@@ -48,6 +48,19 @@ Kirigami.ApplicationWindow {
 
     pageStack.initialPage: Kirigami.ScrollablePage {
         title: i18nc("@title", "Sounds Balance")
+
+        actions.main: Kirigami.Action {
+            id: addAction
+            // Name of icon associated with the action
+            icon.name: "list-add"
+            // Action text, i18n function returns translated string
+            text: i18nc("@action:button", "Add sound file")
+            // What to do when triggering the action
+            onTriggered: soundFileModel.append({
+                filename: "Kirigami Action added card!"
+            })
+        }
+
         Kirigami.CardsListView {
             id: cardsView
             model: soundFileModel
