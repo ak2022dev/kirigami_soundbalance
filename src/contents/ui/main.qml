@@ -22,6 +22,13 @@ Kirigami.ApplicationWindow {
     // and provides additional context for the translators
     title: i18nc("@title:window", "Sounds Balance")
 
+    ListModel {
+        id: soundFileModel
+        ListElement {
+            filename: "Test file"
+        }
+    }
+
     pageStack.initialPage: Kirigami.ScrollablePage {
         title: i18nc("@title", "Sounds Balance")
     }
