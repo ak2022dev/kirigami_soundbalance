@@ -32,9 +32,16 @@ Kirigami.ApplicationWindow {
     Component {
         id: soundFileDelegate
         Kirigami.AbstractCard {
-
+            contentItem: Item {
+                ColumnLayout {
+                    Controls.Label {
+                        text: filename
+                    }
+                }
+            }
         }
     }
+
     pageStack.initialPage: Kirigami.ScrollablePage {
         title: i18nc("@title", "Sounds Balance")
         Kirigami.CardsListView {
