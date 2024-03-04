@@ -804,3 +804,18 @@ sh ./test_setup.sh
 The above will create a copy of the two test files into the ../test directory.
 
 Next steps: scan in annotated code from previously and update README. Tag at this stage, before moving to a model-view-delegate version.
+
+Tagged as v1.0. Next will start looking at model-view-delegate version. Will experiment in a branch.
+
+***
+
+Created branch mvd-experiment1, working in that.
+Will use this as a basis:
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+The above is a start, but doesn't allow adding more instances of model, which we will need. Moving further in the tutorial...
+
+At the moment documentation is in flux and seems incomplete, unfortunately. Will try to manage with what is there at the moment.
+
+Will start by refactoring to basic app using the correct pattern, then incrementally add functionality from old version...
+
