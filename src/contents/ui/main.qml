@@ -22,6 +22,10 @@ Kirigami.ApplicationWindow {
     // and provides additional context for the translators
     title: i18nc("@title:window", "Sounds Balance")
 
+    pageStack.initialPage: Kirigami.ScrollablePage {
+        title: i18nc("@title", "Sounds Balance")
+    }
+
 /*
     // Set the first page that will be loaded when the app opens
     // This can also be set to an id of a Kirigami.Page
