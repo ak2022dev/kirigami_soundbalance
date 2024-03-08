@@ -38,13 +38,16 @@ Kirigami.ApplicationWindow {
     ListModel {
         id: soundFileModel
         ListElement {
-            filename: "Test file"
+              filename: "Test file"
+//            property string filename
         }
     }
 
     Component {
         id: soundFileDelegate
         Kirigami.AbstractCard {
+            required property var modelData
+            required property int index
             contentItem: Item {
                 ColumnLayout {
                     Controls.Label {

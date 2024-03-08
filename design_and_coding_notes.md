@@ -833,3 +833,16 @@ The above is for Qt6 but that's fine because Kirigami is soon to be ported to Qt
 <https://www.qt.io/product/qt6/qml-book/ch07-modelview-model-view>
 
 The above is the web-page version where model-view-delegate explanations start in-earnest. It is essential reading in my opinion.
+
+Have added a fileDialog with correctly working code to extract the filename and place it in a visible label. Now need a container to hold all of the filenames so that they can be passed into the command line in backend.
+
+Looking at this page for example, to try to figure out model access in delegate:
+
+<https://www.qt.io/product/qt6/qml-book/ch07-modelview-basic-models>
+
+Looks like:
+
+    required property var modelData
+    required property int index
+
+are needed in the delegate, to access the index value and model container. Not really properly explained, so will have to try examples.
