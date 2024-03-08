@@ -48,12 +48,27 @@ Kirigami.ApplicationWindow {
             contentItem: Item {
                 ColumnLayout {
                     Controls.Label {
+                        id: label
                         text: filename
                     }
                     Controls.Button {
                         id: openFilesButton
                         text: i18n("Open File")
+                        onClicked: {
+                            fileDialog.open();
+                        }
                     }
+                }
+            }
+            FileDialog {
+                id: fileDialog
+                title: "Please choose a file"
+                onAccepted: {
+                    label.text = "~" + fileDialog.fileUrl.toString().slice(13)
+                }
+                onRejected: {
+                    console.log("Cancelled")
+                    fileDialog.close()
                 }
             }
         }

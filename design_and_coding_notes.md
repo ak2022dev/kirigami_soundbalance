@@ -820,3 +820,16 @@ At the moment documentation is in flux and seems incomplete, unfortunately. Will
 Will start by refactoring to basic app using the correct pattern, then incrementally add functionality from old version...
 
 Reached a stage where the delegate needs to start adding text field, button etc...
+
+Having done the basics of above, now need to figure out how elements within list model/view interact with other components / objects that are part of the same list "element" or whatever the correct terminology is for that. Will look at other examples too, having so-far used this:
+
+<https://develop.kde.org/docs/getting-started/kirigami/introduction-listviews/>
+
+The Qt/QML book is proving useful for the model-view-delegate design pattern.
+<https://www.qt.io/hubfs/_website/QML%20Book/qt6book-with-frontpage.pdf?utm_referrer=https%3A%2F%2Fwww.qt.io%2F>
+
+The above is for Qt6 but that's fine because Kirigami is soon to be ported to Qt6 anyway; also advised by some members of KDE to consult the Qt6 version of this book.
+
+<https://www.qt.io/product/qt6/qml-book/ch07-modelview-model-view>
+
+The above is the web-page version where model-view-delegate explanations start in-earnest. It is essential reading in my opinion.
