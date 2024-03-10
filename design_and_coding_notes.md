@@ -846,3 +846,60 @@ Looks like:
     required property int index
 
 are needed in the delegate, to access the index value and model container. Not really properly explained, so will have to try examples.
+
+Need printout but struggling with usb passthrough into vm and also with clipboard copy/paste.
+
+It turns out the printer usb passthrough works fine on KDE Neon, even the develeper edition which is expected to have bugs, but doesn't work in Fedora. May create a Fedora account so that I can submit bug-reports.
+
+Tried moving required properties from AbstractCard to containing Component, as my delegate is currently a component, but I get this error:
+qrc:/main.qml:46:5: Component objects cannot declare new properties.
+
+Need to look carefully again at examples. The example from the book seems to jump from concept to concept. I may consider re-organising sections and offer as a contribution to the documentation.
+
+<https://www.qt.io/product/qt6/qml-book/ch07-modelview-dynamic-views>
+
+Considering the above, it may be worth changing the component to a ListView? Still very confusing because in that example the delegate is a direct field in the object, rather than referred-to using an id. Maybe the AbstractCard is the actual delegate? Very confusing!
+
+On changing AbstractCard to the delegate, the error has changed to this, but still seems like progress:
+
+qrc:/main.qml:54:13: Required property index was not initialized
+qrc:/main.qml:53:13: Required property modelData was not initialized
+"There are still \"1\" items in the process of being created at engine destruction."
+
+<https://www.qt.io/product/qt6/qml-book/ch07-modelview-delegate>
+
+Looking at the above, instead of first going through the model-view-delegate concepts one by one, there's a jump between the three concepts and other concepts. I will need to stop and make my own notes, possibly experiment with a simpler example first. Also wondering if the official documentation, the Qt book aside, has more concrete info. Will check.
+
+The official documentation seems to have tutorials focused around QtCreator and videos. I am unsure if they'll touch on model-view-delegate for the early examples, but will see.
+
+They're quite large examples and may not be what I need at this stage. Will go back to the book versions and see if I can get-going using those. Part of the issue is that some of the types are from Kirigami, which also does not have current documentation due to currently transitioning from verion 5 to version 6.
+
+<https://api.kde.org/frameworks/kirigami/html/index.html>
+
+Above is the kirigami2 api main page. It may help with classes used in the example, such as GlobalDrawer and AbstractCard. Will look at those next.
+
+Very impressive, includes DOxygen links to the source, which is very helpful, e.g.
+
+<https://api.kde.org/frameworks/kirigami/html/GlobalDrawer_8qml_source.html>
+
+What's useful, for, for example below:
+<https://api.kde.org/frameworks/kirigami/html/classAbstractCard.html>
+
+... is that it's very clear how Kirigami is based on QtQuick, so that the documentation for Qt classes can also be consulted. It's clearer now, for example, that AbstractCard seems appropriate to use as a delegate.
+
+How all this relates to ListView, for example, could be enlightening:
+
+<https://doc.qt.io/qt-6/qml-qtquick-listview.html>
+
+In particular, I am looking at the model field:
+
+<https://doc.qt.io/qt-6/qml-qtquick-listview.html#model-prop>
+
+Also, the top of the page:
+
+<https://doc.qt.io/qt-6/qtquick-modelviewsdata-modelview.html#qml-data-models>
+
+The above is extremely useful, for example in clarifying the model and modelData fields.
+
+Will need to read the above slowly and carefully. So far it offers the clearest explanation of a number of concepts I have been reading about from the book.
+

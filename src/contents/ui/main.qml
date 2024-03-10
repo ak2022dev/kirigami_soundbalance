@@ -43,9 +43,13 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Component {
-        id: soundFileDelegate
+//    Component {
+//        id: soundFileDelegate
+//            required property var modelData
+//            required property int index
+
         Kirigami.AbstractCard {
+            id: soundFileDelegate
             required property var modelData
             required property int index
             contentItem: Item {
@@ -75,7 +79,7 @@ Kirigami.ApplicationWindow {
                 }
             }
         }
-    }
+//    }
 
     pageStack.initialPage: Kirigami.ScrollablePage {
         title: i18nc("@title", "Sounds Balance")
